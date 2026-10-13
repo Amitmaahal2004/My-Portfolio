@@ -107,7 +107,7 @@ Updating this single object automatically updates the header, hero section, stat
 
 ### 2. Replacing Images & Assets
 All image paths are centrally registered in `PORTFOLIO_ASSETS` in `js/config.js`:
-- **Profile Photo**: Replace `assets/images/profile/profile.webp` (or change the path in `PORTFOLIO_ASSETS.profile.main`).
+- **Profile Photo**: Replace `assets/images/profile/profile.jpeg` (or change the path in `PORTFOLIO_ASSETS.profile.main`).
 - **Workspace Photo**: Replace `assets/images/profile/workspace.webp`.
 - **Project Thumbnails**: Add your project screenshots to `assets/images/projects/` and update `PORTFOLIO_ASSETS.projects`.
 - **Resume**: Replace `assets/files/resume.html` and `assets/files/resume.pdf`.

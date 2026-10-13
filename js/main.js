@@ -203,7 +203,8 @@
     const nextProject = projects[(currentIndex + 1) % projects.length];
 
     // Populate Page Elements
-    document.title = `${project.title} — Case Study | Alex Rivera`;
+    const authorName = (window.PORTFOLIO_CONFIG?.profile?.name) || 'Amit Maahal';
+    document.title = `${project.title} — Case Study | ${authorName}`;
 
     const titleEl = document.getElementById('case-title');
     if (titleEl) titleEl.textContent = project.title;
@@ -416,7 +417,7 @@
           form.reset();
 
           if (window.Components?.showToast) {
-            window.Components.showToast('Message submitted! Alex will respond shortly.');
+            window.Components.showToast('Message submitted! Amit will respond shortly.');
           }
         }, 800);
       });

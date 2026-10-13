@@ -34,8 +34,8 @@
       headerContainer.className = 'site-header';
       headerContainer.innerHTML = `
         <div class="container header-inner">
-          <a href="index.html" class="brand-link" aria-label="Alex Rivera Portfolio Home">
-            <img src="${logoUrl}" alt="Alex Rivera Monogram Logo" class="logo-img" width="140" height="36" />
+          <a href="index.html" class="brand-link" aria-label="${config.profile ? config.profile.name : 'Amit Maahal'} Portfolio Home">
+            <img src="${logoUrl}" alt="${config.profile ? config.profile.name : 'Amit Maahal'} Logo" class="logo-img" width="140" height="36" />
           </a>
 
           <nav class="nav-links" aria-label="Main Navigation">
@@ -117,7 +117,7 @@
         <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
           <div class="mobile-drawer-header">
             <a href="index.html" class="brand-link">
-              <img src="${logoUrl}" alt="Alex Rivera Logo" height="32" />
+              <img src="${logoUrl}" alt="${config.profile ? config.profile.name : 'Amit Maahal'} Logo" height="32" />
             </a>
             <button class="icon-btn" id="mobile-close-btn" aria-label="Close Navigation Menu">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -184,7 +184,7 @@
           <div class="footer-top-grid">
             <div class="footer-brand-col">
               <a href="index.html" class="brand-link">
-                <img src="${logoUrl}" alt="Alex Rivera Logo" height="34" />
+                <img src="${logoUrl}" alt="${config.profile.name} Logo" height="34" />
               </a>
               <p class="section-subtitle" style="font-size: var(--font-size-sm); max-width: 380px;">
                 ${config.profile.tagline}
@@ -414,7 +414,7 @@
                 <div class="settings-group-label">Max Container Width</div>
                 <select class="form-control" id="pref-container-width">
                   <option value="1100px">Compact (1100px)</option>
-                  <option value="1200px" selected>Standard (1200px)</option>
+                  <option value="1440px" selected>Standard (1440px)</option>
                   <option value="1320px">Wide Editorial (1320px)</option>
                 </select>
               </div>
@@ -461,7 +461,7 @@
                 <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: var(--font-size-xs);">
                   <div class="card" style="padding: 0.75rem;">
                     <strong>Profile Portrait:</strong><br/>
-                    <code>${(assets && assets.profile) ? assets.profile.main : 'assets/images/profile/profile.webp'}</code>
+                    <code>${(assets && assets.profile) ? assets.profile.main : 'assets/images/profile/profile.jpeg'}</code>
                   </div>
                   <div class="card" style="padding: 0.75rem;">
                     <strong>Branding Logo:</strong><br/>

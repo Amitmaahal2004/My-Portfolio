@@ -79,7 +79,7 @@ window.PORTFOLIO_CONFIG = {
   // --------------------------------------------------------------------------
   layout: {
     maxWidth: "1440px",
-    containerWidth: "1200px",
+    containerWidth: "1440px",
     sectionSpacing: "96px",
     cardRadius: "20px"
   },
@@ -101,11 +101,10 @@ window.PORTFOLIO_CONFIG = {
   // Social Profiles
   // --------------------------------------------------------------------------
   social: [
-    { platform: "GitHub", url: "https://github.com", icon: "github", label: "github.com/alexrivera" },
-    { platform: "WordPress", url: "https://profiles.wordpress.org", icon: "wordpress", label: "profiles.wordpress.org/alex" },
-    { platform: "LinkedIn", url: "https://linkedin.com", icon: "linkedin", label: "linkedin.com/in/alexrivera" },
-    { platform: "X / Twitter", url: "https://twitter.com", icon: "twitter", label: "@alexrivera_dev" },
-    { platform: "Dribbble", url: "https://dribbble.com", icon: "dribbble", label: "dribbble.com/alexrivera" }
+    { platform: "LinkedIn", url: "https://www.linkedin.com/in/amit-spark-web-148476396", icon: "linkedin", label: "linkedin.com/in/amit-spark-web-148476396" },
+    { platform: "Instagram", url: "https://www.instagram.com/anku_official_92_/", icon: "instagram", label: "@anku_official_92_" },
+    { platform: "Facebook", url: "https://www.facebook.com/share/1BzW8iDRsX/", icon: "facebook", label: "facebook.com/share/1BzW8iDRsX/" },
+    { platform: "GitHub", url: "https://github.com", icon: "github", label: "github.com/amit-maahal" }
   ],
 
   // --------------------------------------------------------------------------
@@ -128,11 +127,11 @@ window.PORTFOLIO_CONFIG = {
  */
 window.PORTFOLIO_ASSETS = {
   profile: {
-    main: "assets/images/profile/profile.webp",
+    main: "assets/images/profile/profile.jpeg",
     fallback: "assets/images/profile/profile.jpg",
     altPortrait: "assets/images/profile/profile-alt.webp",
     workspace: "assets/images/profile/workspace.webp",
-    alt: "Alex Rivera - Web Designer & WordPress Developer in studio office"
+    alt: "Amit Maahal - Web Designer & WordPress Developer in studio office"
   },
 
   branding: {
@@ -211,7 +210,7 @@ add_action('rest_api_init', function () {
     ]);
 });`,
       liveDemo: "https://demo.woopulse.dev",
-      sourceCode: "https://github.com/alexrivera/woopulse-engine"
+      sourceCode: "https://github.com/amit-maahal/woopulse-engine"
     },
 
     {
@@ -257,7 +256,7 @@ function aura_custom_ajax_add_to_cart() {
     ]);
 }`,
       liveDemo: "https://demo.auraliving.studio",
-      sourceCode: "https://github.com/alexrivera/aura-living-store"
+      sourceCode: "https://github.com/amit-maahal/aura-living-store"
     },
 
     {
@@ -302,7 +301,7 @@ protected function render() {
     // Semantic, lean markup output
 }`,
       liveDemo: "https://novacraft.dev",
-      sourceCode: "https://github.com/alexrivera/novacraft-elementor"
+      sourceCode: "https://github.com/amit-maahal/novacraft-elementor"
     },
 
     {
@@ -342,7 +341,7 @@ add_filter('wp_insert_post_data', function ($data, $postarr) {
     return $data;
 }, 10, 2);`,
       liveDemo: "https://demo.metrohealth.org",
-      sourceCode: "https://github.com/alexrivera/metrohealth-portal"
+      sourceCode: "https://github.com/amit-maahal/metrohealth-portal"
     },
 
     {
@@ -382,7 +381,7 @@ register_block_type('vanguard/breaking-ticker', [
     }
 ]);`,
       liveDemo: "https://demo.vanguardmedia.co",
-      sourceCode: "https://github.com/alexrivera/vanguard-media-wp"
+      sourceCode: "https://github.com/amit-maahal/vanguard-media-wp"
     },
 
     {
@@ -417,7 +416,7 @@ register_block_type('vanguard/breaking-ticker', [
 $query = "SELECT ID, post_title, ( 3959 * acos( cos( radians(%f) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(%f) ) + sin( radians(%f) ) * sin( radians( lat ) ) ) ) AS distance 
 FROM {$wpdb->prefix}artisan_locations HAVING distance < %d ORDER BY distance LIMIT 25;";`,
       liveDemo: "https://demo.artisanguild.org",
-      sourceCode: "https://github.com/alexrivera/artisan-guild-directory"
+      sourceCode: "https://github.com/amit-maahal/artisan-guild-directory"
     }
   ],
 
@@ -616,19 +615,19 @@ FROM {$wpdb->prefix}artisan_locations HAVING distance < %d ORDER BY distance LIM
   // --------------------------------------------------------------------------
   testimonials: [
     {
-      quote: "Alex completely transformed our WooCommerce store. Our checkout bounce rate dropped immediately, and the custom inventory plugin he built saves our operations team hours every single day.",
+      quote: "Amit completely transformed our WooCommerce store. Our checkout bounce rate dropped immediately, and the custom inventory plugin he built saves our operations team hours every single day.",
       author: "Marcus Lindqvist",
       title: "Founder, Aura Design Studio",
       location: "Copenhagen, Denmark"
     },
     {
-      quote: "Finding a developer who genuinely understands high-end visual design AND deep WordPress PHP architecture is almost impossible. Alex is that rare 1% hybrid talent.",
+      quote: "Finding a developer who genuinely understands high-end visual design AND deep WordPress PHP architecture is almost impossible. Amit is that rare 1% hybrid talent.",
       author: "Elena Rostova",
       title: "Creative Director, Vanguard Media",
       location: "London, UK"
     },
     {
-      quote: "Our previous agency gave us a bloated site with 45 plugins. Alex rebuilt it lean, cut our server costs in half, and achieved a 99 mobile Lighthouse score.",
+      quote: "Our previous agency gave us a bloated site with 45 plugins. Amit rebuilt it lean, cut our server costs in half, and achieved a 99 mobile Lighthouse score.",
       author: "David Chen",
       title: "VP of Digital, MetroHealth Clinic",
       location: "San Francisco, CA"

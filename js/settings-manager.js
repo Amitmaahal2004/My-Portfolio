@@ -19,7 +19,7 @@
     headingWeight: 700,
     cardRadius: 'medium', // 'sharp' (8px) | 'medium' (18px) | 'rounded' (28px) | 'pill' (38px)
     spacingMode: 'comfortable', // 'compact' | 'comfortable' | 'spacious'
-    containerWidth: '1200px',
+    containerWidth: '1440px',
     animationIntensity: 'normal', // 'subtle' | 'normal' | 'energetic' | 'off'
     enableCursor: true,
     enableBackgroundEffects: true,

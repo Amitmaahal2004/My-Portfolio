@@ -8,7 +8,7 @@
    ----------------------------------------------------------------------- */
 @media (min-width: 1440px) {
   :root {
-    --container-width: 1320px;
+    --container-width: 1520px;
   }
 }
 
@@ -17,7 +17,7 @@
    ----------------------------------------------------------------------- */
 @media (max-width: 1280px) {
   :root {
-    --container-width: 1120px;
+    --container-width: 1440px;
   }
 
   .footer-top-grid {
@@ -60,7 +60,8 @@
   }
 
   .hero-floating-badge {
-    display: none; /* Hide floating badges on medium screens to keep uncluttered */
+    display: none;
+    /* Hide floating badges on medium screens to keep uncluttered */
   }
 
   .grid-4 {
