@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Rivera — Web Designer &amp; WordPress Developer | Design System &amp; PHP Architecture</title>
+  <meta name="description" content="Portfolio of Alex Rivera, Senior Web Designer and WordPress Developer specializing in custom WordPress plugins, bespoke WooCommerce architectures, and modern interactive frontend experiences.">
+  <meta name="keywords" content="WordPress Developer, Web Designer, WooCommerce, Custom WordPress Plugins, PHP, Frontend Engineer, Design System">
+  <meta name="author" content="Alex Rivera">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alex Rivera — Web Designer &amp; WordPress Developer">
+  <meta property="og:description" content="High-performance WordPress systems, custom plugins, bespoke WooCommerce stores, and interactive design playground.">
+  <meta property="og:image" content="assets/images/profile/profile.webp">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
+  <!-- Fast Theme & Color Initializer (Zero FOUC) -->
+  <script src="js/config.js"></script>
+  <script src="js/theme-manager.js"></script>
+  <script src="js/color-manager.js"></script>
+</head>
+<body>
+
+  <!-- Ambient Visual Canvas Background -->
+  <div class="site-bg-wrapper" aria-hidden="true">
+    <div class="bg-ambient-glow"></div>
+    <div class="bg-mesh-pattern"></div>
+    <div class="bg-noise-overlay"></div>
+  </div>
+
+  <!-- Shared Header Hook -->
+  <header id="site-header"></header>
+
+  <!-- Mobile Drawer Hook -->
+  <div id="mobile-nav-container"></div>
+
+  <main id="main-content">
+    
+    <!-- ====================================================================
+         HERO SECTION
+         ==================================================================== -->
+    <section class="section hero-section" aria-label="Introduction">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-content">
+            <div class="hero-greeting reveal">
+              <span class="hero-status-pulse"></span>
+              <span>Available for WordPress Projects &bull; Q4 Booking</span>
+            </div>
+
+            <h1 class="hero-title reveal delay-1">
+              Designing experiences.<br>
+              Engineering <span class="gradient-text">robust WordPress</span> solutions.
+            </h1>
+
+            <p class="hero-description reveal delay-2">
+              I am <strong>Alex Rivera</strong>, a creative web designer and WordPress developer. 
+              I build enterprise-grade custom plugins, bespoke WooCommerce engines, and lightning-fast digital products that pass every Google Core Web Vitals audit.
+            </p>
+
+            <div class="hero-actions reveal delay-3">
+              <a href="projects.html" class="btn btn-primary btn-lg" id="hero-cta-projects">
+                <span>Explore Featured Work</span>
+                <span class="btn-icon-right">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </a>
+              <a href="contact.html" class="btn btn-secondary btn-lg" id="hero-cta-contact">
+                <span>Start a Conversation</span>
+              </a>
+              <button class="btn btn-outline btn-lg nav-customize-trigger" aria-label="Open Live Customization Panel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                <span>Live Style Studio</span>
+              </button>
+            </div>
+
+            <div class="hero-stats-row reveal delay-4">
+              <div class="hero-stat-item">
+                <div class="hero-stat-number"><span class="stat-counter" data-target="8">8</span>+</div>
+                <div class="hero-stat-label">Years Experience</div>
+              </div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-number"><span class="stat-counter" data-target="120">120</span>+</div>
+                <div class="hero-stat-label">WordPress Sites</div>
+              </div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-number"><span class="stat-counter" data-target="14">14</span>+</div>
+                <div class="hero-stat-label">Custom Plugins</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Portrait Showcase -->
+          <div class="hero-visual reveal delay-2">
+            <div class="hero-portrait-card">
+              <img src="assets/images/profile/profile.webp" alt="Alex Rivera - Senior Web Designer &amp; WordPress Developer" width="440" height="440" priority="high">
+            </div>
+
+            <!-- Floating Micro-Badges -->
+            <div class="hero-floating-badge hero-badge-top animate-float">
+              <div class="badge-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="badge-text-title">Custom WP Plugins</div>
+                <div class="badge-text-sub">PHP 8.2 &bull; REST API &bull; HPOS</div>
+              </div>
+            </div>
+
+            <div class="hero-floating-badge hero-badge-bottom animate-float" style="animation-delay: 2s;">
+              <div class="badge-icon-box" style="background: rgba(16, 185, 129, 0.15); color: #10B981;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="badge-text-title">Core Web Vitals Pass</div>
+                <div class="badge-text-sub">Sub-80ms TTFB &bull; 99 Speed</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TECH ARSENAL TICKER / MARQUEE
+         ==================================================================== -->
+    <section class="section-sm" style="border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); background: var(--color-surface-hover);" aria-label="Core Technologies">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(1rem, 3vw, 2.5rem); font-family: var(--font-heading); font-size: var(--font-size-sm); font-weight: 700; color: var(--color-text-secondary);">
+          <span style="color: var(--color-primary);">&bull; WordPress Core</span>
+          <span>&bull; PHP 8.x OOP</span>
+          <span>&bull; WooCommerce HPOS</span>
+          <span>&bull; Elementor Dynamic API</span>
+          <span>&bull; Gutenberg Blocks</span>
+          <span>&bull; Vanilla JS ES6+</span>
+          <span>&bull; MySQL Optimization</span>
+          <span>&bull; REST APIs</span>
+          <span>&bull; Redis Caching</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         FEATURED CASE STUDIES
+         ==================================================================== -->
+    <section class="section" id="featured-projects-section" aria-label="Featured Projects">
+      <div class="container">
+        <div class="section-header flex-between" style="flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <div class="section-tag">
+              <span class="section-tag-dot"></span>
+              <span>Handcrafted Solutions</span>
+            </div>
+            <h2 class="section-title">Selected Case Studies</h2>
+            <p class="section-subtitle">A curated selection of custom WordPress plugins, WooCommerce architectures, and interactive digital products.</p>
+          </div>
+          <div>
+            <a href="projects.html" class="btn btn-secondary">
+              <span>View All 6 Projects</span>
+              <span class="btn-icon-right">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Rendered dynamically by main.js from PORTFOLIO_DATA -->
+        <div class="grid grid-3" id="home-featured-projects"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CODE / ARCHITECTURE SPOTLIGHT
+         ==================================================================== -->
+    <section class="section" style="background: var(--color-bg-alt);" aria-label="Engineering Philosophy">
+      <div class="container">
+        <div class="grid grid-2" style="align-items: center; gap: clamp(2rem, 5vw, 4rem);">
+          <div class="reveal">
+            <div class="section-tag">
+              <span class="section-tag-dot"></span>
+              <span>Engineering Standard</span>
+            </div>
+            <h2 class="section-title">Clean Code. No Bloat. Scalable Architecture.</h2>
+            <p class="section-subtitle" style="margin-bottom: 1.5rem;">
+              Most WordPress websites suffer under the weight of 40+ poorly coded plugins, conflicting jQuery libraries, and unindexed database queries.
+            </p>
+            <p style="font-size: var(--font-size-md); color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 1.75rem;">
+              I write clean, modular, object-oriented PHP strictly adhering to the WordPress Coding Standards. My custom plugins utilize native transients, asynchronous background queues, and secure REST endpoints to handle thousands of concurrent users effortlessly.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="about.html" class="btn btn-primary">Read My Philosophy</a>
+              <a href="skills.html" class="btn btn-outline">Inspect Skills Matrix</a>
+            </div>
+          </div>
+
+          <div class="reveal delay-2">
+            <div class="card" style="padding: 1.5rem; background: var(--color-code-bg); border-color: var(--color-code-border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 1rem; border-bottom: 1px solid var(--color-code-border); margin-bottom: 1rem;">
+                <div style="display: flex; gap: 6px;">
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B;"></span>
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></span>
+                </div>
+                <span style="font-family: var(--font-code); font-size: 0.75rem; color: var(--color-text-muted);">class-woopulse-engine.php</span>
+              </div>
+              <pre class="code-snippet" style="border: none; padding: 0; background: transparent;"><code style="background: transparent; color: #E2E8F0; padding: 0;">declare(strict_types=1);
+
+namespace WooPulse\Core;
+
+final class MetricsEngine {
+    private const CACHE_TTL = 300; // 5 mins Redis transient
+
+    public function get_realtime_velocity(): array {
+        $transient_key = 'woopulse_live_velocity';
+        $cached = wp_cache_get($transient_key, 'woopulse');
+
+        if (false !== $cached) {
+            return $cached;
+        }
+
+        // Direct indexed query bypassing postmeta bloat
+        $metrics = $this->query_hpos_orders_fast();
+        wp_cache_set($transient_key, $metrics, 'woopulse', self::CACHE_TTL);
+
+        return $metrics;
+    }
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SERVICES OVERVIEW
+         ==================================================================== -->
+    <section class="section" id="services-preview-section" aria-label="Services Overview">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>What I Deliver</span>
+          </div>
+          <h2 class="section-title">Specialized WordPress Services</h2>
+          <p class="section-subtitle">Tailored technical solutions designed to give your company an unfair digital advantage.</p>
+        </div>
+
+        <div class="grid grid-3" id="home-services-grid"></div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="services.html" class="btn btn-secondary">
+            <span>Explore All 6 Services &amp; Workflow Process</span>
+            <span class="btn-icon-right">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CLIENT TESTIMONIALS
+         ==================================================================== -->
+    <section class="section" style="background: var(--color-bg-alt);" aria-label="Client Testimonials">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Client Praise</span>
+          </div>
+          <h2 class="section-title">Trusted by Modern Founders &amp; Studios</h2>
+          <p class="section-subtitle">Real experiences from international clients, product managers, and agencies.</p>
+        </div>
+
+        <div class="grid grid-3" id="home-testimonials-grid"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CALL TO ACTION BANNER
+         ==================================================================== -->
+    <section class="section" aria-label="Call to Action">
+      <div class="container">
+        <div class="card reveal" style="padding: clamp(2.5rem, 6vw, 4.5rem); text-align: center; background: radial-gradient(circle at 50% 50%, rgba(var(--color-primary-rgb), 0.15) 0%, var(--color-surface) 75%); border-color: rgba(var(--color-primary-rgb), 0.35);">
+          <div class="section-tag" style="margin-bottom: 1.5rem;">
+            <span class="section-tag-dot"></span>
+            <span>Let's Build Something Memorable</span>
+          </div>
+          <h2 class="section-title" style="max-width: 720px; margin-left: auto; margin-right: auto; margin-bottom: 1.25rem;">
+            Have a WordPress or Web Design project in mind?
+          </h2>
+          <p class="section-subtitle" style="margin-left: auto; margin-right: auto; margin-bottom: 2rem;">
+            Whether you need a custom plugin built from scratch, a WooCommerce revamp, or full design systems architecture, I'm ready to collaborate.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary btn-lg">
+              <span>Book an Intro Call</span>
+              <span class="btn-icon-right">&rarr;</span>
+            </a>
+            <a href="projects.html" class="btn btn-secondary btn-lg">Browse Case Studies</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared Footer Hook -->
+  <footer id="site-footer"></footer>
+
+  <!-- Central Customization Hook -->
+  <div id="customization-container"></div>
+
+  <!-- JavaScript Modules in Dependency Order -->
+  <script src="js/settings-manager.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

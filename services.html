@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services &amp; Solutions — Alex Rivera | WordPress &amp; WooCommerce Engineering</title>
+  <meta name="description" content="Explore custom WordPress development, bespoke WooCommerce engineering, Elementor design systems, and speed optimization services by Alex Rivera.">
+  <meta name="author" content="Alex Rivera">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Services &amp; Solutions — Alex Rivera">
+  <meta property="og:description" content="Full-spectrum WordPress engineering, bespoke plugins, and performance optimization.">
+  <meta property="og:image" content="assets/images/profile/profile.webp">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
+  <!-- Fast Theme & Color Initializer (Zero FOUC) -->
+  <script src="js/config.js"></script>
+  <script src="js/theme-manager.js"></script>
+  <script src="js/color-manager.js"></script>
+</head>
+<body>
+
+  <!-- Background Ambiance -->
+  <div class="site-bg-wrapper" aria-hidden="true">
+    <div class="bg-ambient-glow"></div>
+    <div class="bg-mesh-pattern"></div>
+    <div class="bg-noise-overlay"></div>
+  </div>
+
+  <!-- Shared Header -->
+  <header id="site-header"></header>
+  <div id="mobile-nav-container"></div>
+
+  <main id="main-content">
+    
+    <!-- Hero Header -->
+    <section class="section" style="padding-bottom: 2rem;">
+      <div class="container">
+        <div class="section-tag reveal">
+          <span class="section-tag-dot"></span>
+          <span>Core Offerings</span>
+        </div>
+        <h1 class="hero-title reveal delay-1" style="max-width: 850px; margin-bottom: 1.25rem;">
+          Specialized services designed for <span class="gradient-text">scale, speed, and conversion</span>.
+        </h1>
+        <p class="lead-text reveal delay-2" style="max-width: 750px;">
+          I partner with brands, agencies, and high-volume e-commerce stores to deliver robust WordPress engineering, custom plugin development, and design systems.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Grid (Rendered dynamically from PORTFOLIO_DATA.services) -->
+    <section class="section" style="padding-top: 1rem;" aria-label="Services List">
+      <div class="container">
+        <div class="grid grid-3" id="services-full-grid"></div>
+      </div>
+    </section>
+
+    <!-- 4-Step Engineering Workflow -->
+    <section class="section" style="background: var(--color-bg-alt);" aria-label="Workflow Process">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>How We Work</span>
+          </div>
+          <h2 class="section-title">The 4-Step Delivery Process</h2>
+          <p class="section-subtitle">Structured, transparent, and milestone-driven from kickoff to launch.</p>
+        </div>
+
+        <div class="grid grid-4">
+          <div class="card reveal" style="padding: 2rem;">
+            <div style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--color-primary); margin-bottom: 0.5rem;">01</div>
+            <h3 style="font-size: var(--font-size-lg); margin-bottom: 0.5rem;">Discovery &amp; Audit</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.6;">
+              Deep analysis of current technical roadblocks, server environment, database size, and specific business requirements.
+            </p>
+          </div>
+
+          <div class="card reveal delay-1" style="padding: 2rem;">
+            <div style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--color-primary); margin-bottom: 0.5rem;">02</div>
+            <h3 style="font-size: var(--font-size-lg); margin-bottom: 0.5rem;">Architecture</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.6;">
+              Figma wireframes, database schemas, API specs, and hook architecture planned before writing a single line of production code.
+            </p>
+          </div>
+
+          <div class="card reveal delay-2" style="padding: 2rem;">
+            <div style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--color-primary); margin-bottom: 0.5rem;">03</div>
+            <h3 style="font-size: var(--font-size-lg); margin-bottom: 0.5rem;">Engineering &amp; QA</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.6;">
+              Object-oriented PHP development on isolated staging servers with automated tests, security checks, and cross-browser audits.
+            </p>
+          </div>
+
+          <div class="card reveal delay-3" style="padding: 2rem;">
+            <div style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--color-primary); margin-bottom: 0.5rem;">04</div>
+            <h3 style="font-size: var(--font-size-lg); margin-bottom: 0.5rem;">Deployment &amp; Speed</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.6;">
+              Zero-downtime deployment, Redis object caching activation, CDN configuration, and team training on editorial controls.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive FAQ Section -->
+    <section class="section" aria-label="Frequently Asked Questions">
+      <div class="container container-narrow">
+        <div class="section-header text-center">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Common Questions</span>
+          </div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Straightforward answers about timeline, pricing, and technical standards.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          
+          <div class="card faq-item" style="padding: 1.5rem 1.75rem;">
+            <div class="faq-question" style="font-weight: 700; font-size: var(--font-size-md); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+              <span>Why build a custom plugin instead of using off-the-shelf options?</span>
+              <span class="faq-icon" style="color: var(--color-primary);">&plus;</span>
+            </div>
+            <div class="faq-answer" style="margin-top: 1rem; font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.7;">
+              Commercial plugin packs are designed to be everything for everyone. They bundle hundreds of unused options, heavy CSS/JS assets, and unoptimized database tables that degrade your page speed. A bespoke custom plugin does precisely what your business needs with zero bloat and sub-second execution.
+            </div>
+          </div>
+
+          <div class="card faq-item" style="padding: 1.5rem 1.75rem;">
+            <div class="faq-question" style="font-weight: 700; font-size: var(--font-size-md); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+              <span>How do you guarantee Core Web Vitals compliance?</span>
+              <span class="faq-icon" style="color: var(--color-primary);">&plus;</span>
+            </div>
+            <div class="faq-answer" style="margin-top: 1rem; font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.7;">
+              I write CSS using modern variables without heavy third-party framework overhead, implement strict image dimension aspect ratios to prevent Cumulative Layout Shift (CLS), and optimize server-side database queries to ensure Time to First Byte (TTFB) remains under 100ms.
+            </div>
+          </div>
+
+          <div class="card faq-item" style="padding: 1.5rem 1.75rem;">
+            <div class="faq-question" style="font-weight: 700; font-size: var(--font-size-md); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+              <span>Do you work with existing WordPress websites or only new builds?</span>
+              <span class="faq-icon" style="color: var(--color-primary);">&plus;</span>
+            </div>
+            <div class="faq-answer" style="margin-top: 1rem; font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.7;">
+              Both! I frequently audit, refactor, and rescue existing high-traffic WordPress and WooCommerce stores suffering from plugin conflicts or slow speeds, as well as designing complete greenfield platforms from the ground up.
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Have Another Question? Let's Talk &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared Footer -->
+  <footer id="site-footer"></footer>
+  <div id="customization-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/settings-manager.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

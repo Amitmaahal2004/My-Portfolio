@@ -1,0 +1,135 @@
+/* ==========================================================================
+   ANIMATIONS.CSS - Motion Design System & Scroll Reveals
+   Smooth, tasteful, performant micro-interactions with reduced-motion support
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Scroll Reveal System (Driven by IntersectionObserver)
+   ----------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(35px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger Delays */
+.delay-1 { transition-delay: 100ms; }
+.delay-2 { transition-delay: 200ms; }
+.delay-3 { transition-delay: 300ms; }
+.delay-4 { transition-delay: 400ms; }
+.delay-5 { transition-delay: 500ms; }
+
+/* --------------------------------------------------------------------------
+   Subtle Keyframe Animations
+   ----------------------------------------------------------------------- */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Animation Intensity Levels (Configurable via Settings Drawer)
+   ----------------------------------------------------------------------- */
+[data-anim-intensity="subtle"] .reveal {
+  transform: translateY(12px);
+  transition-duration: 0.45s;
+}
+
+[data-anim-intensity="subtle"] .animate-float {
+  animation-duration: 8s;
+}
+
+[data-anim-intensity="energetic"] .reveal {
+  transform: translateY(42px);
+  transition-duration: 0.9s;
+}
+
+[data-anim-intensity="energetic"] .animate-float {
+  animation-duration: 4s;
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion Accessibility Override
+   ----------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce),
+       (data-anim-intensity="off"),
+       [data-animations="false"] {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

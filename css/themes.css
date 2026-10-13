@@ -1,0 +1,139 @@
+/* ==========================================================================
+   THEMES.CSS - Comprehensive Dark & Light Mode Color Tokens
+   Fully calibrated contrast, surface hierarchies, and ambient glows
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   DARK THEME (Default)
+   Rich obsidian, deep slate surfaces, subtle luminescence
+   ----------------------------------------------------------------------- */
+:root,
+[data-theme="dark"] {
+  /* Page Canvas & Surfaces */
+  --color-bg: #090A10;
+  --color-bg-alt: #0D0F18;
+  --color-surface: #131622;
+  --color-surface-hover: #181C2B;
+  --color-surface-elevated: #1C2032;
+  --color-surface-glass: rgba(19, 22, 34, 0.75);
+
+  /* Card Surfaces */
+  --color-card: #131622;
+  --color-card-hover: #191E30;
+  --color-card-border: rgba(255, 255, 255, 0.08);
+  --color-card-border-hover: rgba(var(--color-primary-rgb), 0.45);
+
+  /* Text & Foreground */
+  --color-text: #F8FAFC;
+  --color-text-secondary: #CBD5E1;
+  --color-text-muted: #94A3B8;
+  --color-text-dim: #64748B;
+  --color-text-inverse: #090A10;
+
+  /* Borders & Dividers */
+  --color-border: rgba(255, 255, 255, 0.09);
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+  --color-divider: rgba(255, 255, 255, 0.07);
+
+  /* Overlays & Backdrops */
+  --color-backdrop: rgba(6, 7, 12, 0.78);
+  --color-overlay: rgba(0, 0, 0, 0.6);
+
+  /* Form Elements */
+  --color-input-bg: rgba(15, 18, 28, 0.85);
+  --color-input-border: rgba(255, 255, 255, 0.12);
+  --color-input-focus-border: var(--color-primary);
+
+  /* Code Blocks */
+  --color-code-bg: #0B0D14;
+  --color-code-border: rgba(255, 255, 255, 0.08);
+  --color-code-text: #E2E8F0;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 40px -8px rgba(0, 0, 0, 0.6);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--color-card-border);
+  --shadow-card-hover: 0 20px 40px -15px rgba(0, 0, 0, 0.65), 0 0 25px rgba(var(--color-primary-rgb), 0.2), 0 0 0 1px var(--color-card-border-hover);
+  --shadow-glow: 0 0 30px rgba(var(--color-primary-rgb), 0.25);
+
+  /* Decorative Ambient Gradients */
+  --gradient-hero-glow: radial-gradient(circle at 50% 20%, rgba(var(--color-primary-rgb), 0.16) 0%, rgba(6, 182, 212, 0.06) 45%, transparent 75%);
+  --gradient-surface-subtle: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  --noise-opacity: 0.04;
+}
+
+/* --------------------------------------------------------------------------
+   LIGHT THEME
+   Sophisticated alabaster, clean slate elevations, crisp ink typography
+   ----------------------------------------------------------------------- */
+[data-theme="light"] {
+  /* Page Canvas & Surfaces */
+  --color-bg: #F8FAFC;
+  --color-bg-alt: #F1F5F9;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F8FAFC;
+  --color-surface-elevated: #FFFFFF;
+  --color-surface-glass: rgba(255, 255, 255, 0.85);
+
+  /* Card Surfaces */
+  --color-card: #FFFFFF;
+  --color-card-hover: #FFFFFF;
+  --color-card-border: rgba(15, 23, 42, 0.08);
+  --color-card-border-hover: rgba(var(--color-primary-rgb), 0.5);
+
+  /* Text & Foreground */
+  --color-text: #0F172A;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748B;
+  --color-text-dim: #94A3B8;
+  --color-text-inverse: #FFFFFF;
+
+  /* Borders & Dividers */
+  --color-border: rgba(15, 23, 42, 0.09);
+  --color-border-subtle: rgba(15, 23, 42, 0.05);
+  --color-border-strong: rgba(15, 23, 42, 0.18);
+  --color-divider: rgba(15, 23, 42, 0.08);
+
+  /* Overlays & Backdrops */
+  --color-backdrop: rgba(15, 23, 42, 0.5);
+  --color-overlay: rgba(15, 23, 42, 0.4);
+
+  /* Form Elements */
+  --color-input-bg: #FFFFFF;
+  --color-input-border: rgba(15, 23, 42, 0.15);
+  --color-input-focus-border: var(--color-primary);
+
+  /* Code Blocks */
+  --color-code-bg: #0F172A;
+  --color-code-border: rgba(15, 23, 42, 0.1);
+  --color-code-text: #E2E8F0;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 6px 16px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 16px 32px -4px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+  --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 0 0 1px var(--color-card-border);
+  --shadow-card-hover: 0 20px 35px -8px rgba(15, 23, 42, 0.12), 0 0 20px rgba(var(--color-primary-rgb), 0.15), 0 0 0 1px var(--color-card-border-hover);
+  --shadow-glow: 0 0 24px rgba(var(--color-primary-rgb), 0.2);
+
+  /* Decorative Ambient Gradients */
+  --gradient-hero-glow: radial-gradient(circle at 50% 20%, rgba(var(--color-primary-rgb), 0.1) 0%, rgba(6, 182, 212, 0.04) 45%, transparent 75%);
+  --gradient-surface-subtle: linear-gradient(180deg, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0) 100%);
+  --noise-opacity: 0.02;
+}
+
+/* --------------------------------------------------------------------------
+   Theme Transition Helper
+   Smooth transitions applied when switching themes
+   ----------------------------------------------------------------------- */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition: background-color var(--transition-theme) ease,
+              border-color var(--transition-theme) ease,
+              color var(--transition-theme) ease,
+              box-shadow var(--transition-theme) ease !important;
+}

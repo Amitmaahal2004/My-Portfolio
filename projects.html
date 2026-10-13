@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects &amp; Case Studies — Alex Rivera | WordPress &amp; WooCommerce Engineering</title>
+  <meta name="description" content="Explore custom WordPress plugins, bespoke WooCommerce architectures, Elementor add-on suites, and interactive web apps engineered by Alex Rivera.">
+  <meta name="author" content="Alex Rivera">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects &amp; Case Studies — Alex Rivera">
+  <meta property="og:description" content="Explore custom WordPress plugins, WooCommerce stores, and dynamic web apps.">
+  <meta property="og:image" content="assets/images/projects/woopulse.webp">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
+  <!-- Fast Theme & Color Initializer (Zero FOUC) -->
+  <script src="js/config.js"></script>
+  <script src="js/theme-manager.js"></script>
+  <script src="js/color-manager.js"></script>
+</head>
+<body>
+
+  <!-- Background Ambiance -->
+  <div class="site-bg-wrapper" aria-hidden="true">
+    <div class="bg-ambient-glow"></div>
+    <div class="bg-mesh-pattern"></div>
+    <div class="bg-noise-overlay"></div>
+  </div>
+
+  <!-- Shared Header -->
+  <header id="site-header"></header>
+  <div id="mobile-nav-container"></div>
+
+  <main id="main-content">
+    
+    <!-- Hero Header -->
+    <section class="section" style="padding-bottom: 2rem;">
+      <div class="container">
+        <div class="section-tag reveal">
+          <span class="section-tag-dot"></span>
+          <span>Selected Portfolio</span>
+        </div>
+        <h1 class="hero-title reveal delay-1" style="max-width: 800px; margin-bottom: 1.25rem;">
+          Engineering solutions that <span class="gradient-text">scale seamlessly</span> under load.
+        </h1>
+        <p class="lead-text reveal delay-2" style="max-width: 720px;">
+          Filter by technical domain to see case studies spanning custom WordPress plugin engineering, high-throughput WooCommerce systems, and interactive web applications.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter & Search Controls Bar -->
+    <section class="section-sm" style="padding-top: 0;" aria-label="Project Filters">
+      <div class="container">
+        <div class="card" style="padding: 1.25rem 1.75rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem;">
+          
+          <!-- Category Filter Tabs -->
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;" role="tablist" aria-label="Filter Projects">
+            <button class="btn btn-sm btn-secondary filter-btn active" data-filter="all">All Projects</button>
+            <button class="btn btn-sm btn-secondary filter-btn" data-filter="plugins">WordPress Plugins</button>
+            <button class="btn btn-sm btn-secondary filter-btn" data-filter="woocommerce">WooCommerce</button>
+            <button class="btn btn-sm btn-secondary filter-btn" data-filter="elementor">Elementor &amp; Themes</button>
+            <button class="btn btn-sm btn-secondary filter-btn" data-filter="webapps">Web Applications</button>
+          </div>
+
+          <!-- Live Search Bar -->
+          <div style="display: flex; align-items: center; gap: 0.5rem; min-width: 260px;">
+            <div style="position: relative; width: 100%;">
+              <input type="text" id="project-search-input" class="form-control" placeholder="Search by technology or name..." style="padding-left: 2.5rem; height: 38px; font-size: var(--font-size-xs);" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); pointer-events: none;">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Grid Container -->
+    <section class="section" style="padding-top: 1rem;" aria-label="Project List">
+      <div class="container">
+        <!-- Rendered dynamically by main.js from PORTFOLIO_DATA.projects -->
+        <div class="grid grid-3" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- Custom Solution Banner -->
+    <section class="section" style="background: var(--color-bg-alt);">
+      <div class="container">
+        <div class="card reveal" style="padding: 3rem; text-align: center; border-color: rgba(var(--color-primary-rgb), 0.3);">
+          <h2 style="font-size: var(--font-size-2xl); margin-bottom: 1rem;">Need a bespoke plugin or architecture not shown here?</h2>
+          <p class="section-subtitle" style="margin: 0 auto 2rem;">
+            I frequently architect specialized integrations, custom WP-CLI automation tools, and proprietary e-commerce pipelines under NDA.
+          </p>
+          <a href="contact.html" class="btn btn-primary btn-lg">Request Custom Consultation &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared Footer -->
+  <footer id="site-footer"></footer>
+  <div id="customization-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/settings-manager.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

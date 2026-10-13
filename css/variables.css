@@ -1,0 +1,126 @@
+/* ==========================================================================
+   VARIABLES.CSS - Central Design Token Architecture
+   Single Source of Truth for Design System Tokens
+   ========================================================================== */
+
+:root {
+  /* --------------------------------------------------------------------------
+     Primary Brand Colors (Default: Electric Violet)
+     Overridden dynamically by Color Manager
+     ----------------------------------------------------------------------- */
+  --color-primary: #8B5CF6;
+  --color-primary-rgb: 139, 92, 246;
+  --color-primary-hover: #7C3AED;
+  --color-primary-light: #A78BFA;
+  --color-primary-dark: #6D28D9;
+  --color-primary-glow: rgba(139, 92, 246, 0.35);
+  --color-primary-text-contrast: #FFFFFF;
+
+  /* Secondary & Accents */
+  --color-secondary: #06B6D4;
+  --color-secondary-rgb: 6, 182, 212;
+  --color-secondary-hover: #0891B2;
+  --color-secondary-glow: rgba(6, 182, 212, 0.3);
+
+  --color-accent: #F59E0B;
+  --color-accent-rgb: 245, 158, 11;
+
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* --------------------------------------------------------------------------
+     Typography Tokens
+     Loaded via Google Fonts: Syne (Headings) + Plus Jakarta Sans (Body)
+     Customizable via Settings Manager
+     ----------------------------------------------------------------------- */
+  --font-heading: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-code: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
+
+  /* Font Scale (Fluid with clamp) */
+  --font-size-base: 16px;
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
+  --font-size-sm: clamp(0.8125rem, 0.775rem + 0.2vw, 0.875rem);
+  --font-size-md: clamp(0.9375rem, 0.9rem + 0.25vw, 1rem);
+  --font-size-lg: clamp(1.0625rem, 1rem + 0.4vw, 1.1875rem);
+  --font-size-xl: clamp(1.25rem, 1.15rem + 0.6vw, 1.4375rem);
+  --font-size-2xl: clamp(1.5rem, 1.35rem + 0.9vw, 1.875rem);
+  --font-size-3xl: clamp(1.875rem, 1.65rem + 1.3vw, 2.375rem);
+  --font-size-4xl: clamp(2.25rem, 1.95rem + 1.8vw, 3.125rem);
+  --font-size-5xl: clamp(2.875rem, 2.35rem + 2.8vw, 4.25rem);
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Line Heights */
+  --line-height-tight: 1.15;
+  --line-height-snug: 1.3;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.75;
+
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-wider: 0.12em;
+
+  /* --------------------------------------------------------------------------
+     Layout & Geometry Tokens
+     ----------------------------------------------------------------------- */
+  --max-width: 1440px;
+  --container-width: 1200px;
+  --container-padding: clamp(1.25rem, 4vw, 2.5rem);
+  --section-spacing: clamp(4.5rem, 8vw, 7.5rem);
+  --section-spacing-sm: clamp(2.5rem, 5vw, 4rem);
+
+  /* Corner Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+  --radius-full: 9999px;
+  --card-radius: var(--radius-lg);
+  --btn-radius: var(--radius-md);
+  --input-radius: var(--radius-sm);
+
+  /* --------------------------------------------------------------------------
+     Transitions & Motion
+     ----------------------------------------------------------------------- */
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+  --transition-fast: 180ms var(--ease-out-quad);
+  --transition-normal: 300ms var(--ease-out-cubic);
+  --transition-slow: 500ms var(--ease-out-expo);
+  --transition-theme: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --------------------------------------------------------------------------
+     Elevation & Z-Index Layers
+     ----------------------------------------------------------------------- */
+  --z-negative: -1;
+  --z-base: 1;
+  --z-elevated: 10;
+  --z-sticky: 100;
+  --z-header: 1000;
+  --z-modal-backdrop: 1100;
+  --z-drawer: 1200;
+  --z-toast: 1300;
+  --z-cursor: 9999;
+
+  /* Header & Navigation Specs */
+  --header-height: 76px;
+  --header-height-scrolled: 64px;
+
+  /* Customization Switcher & Controls */
+  --control-border-width: 1.5px;
+  --focus-ring: 0 0 0 3px rgba(var(--color-primary-rgb), 0.35);
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills &amp; Technical Competencies — Alex Rivera | WordPress &amp; Full-Stack PHP</title>
+  <meta name="description" content="Detailed technical skills matrix for Alex Rivera, covering WordPress Core, PHP 8+, WooCommerce, Elementor, REST APIs, and modern frontend design systems.">
+  <meta name="author" content="Alex Rivera">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Skills &amp; Technical Competencies — Alex Rivera">
+  <meta property="og:description" content="Explore my honest technical competencies in WordPress, PHP, JavaScript, and design architecture.">
+  <meta property="og:image" content="assets/images/profile/profile.webp">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
+  <!-- Fast Theme & Color Initializer (Zero FOUC) -->
+  <script src="js/config.js"></script>
+  <script src="js/theme-manager.js"></script>
+  <script src="js/color-manager.js"></script>
+</head>
+<body>
+
+  <!-- Background Ambiance -->
+  <div class="site-bg-wrapper" aria-hidden="true">
+    <div class="bg-ambient-glow"></div>
+    <div class="bg-mesh-pattern"></div>
+    <div class="bg-noise-overlay"></div>
+  </div>
+
+  <!-- Shared Header -->
+  <header id="site-header"></header>
+  <div id="mobile-nav-container"></div>
+
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="section" style="padding-bottom: 2rem;">
+      <div class="container">
+        <div class="section-tag reveal">
+          <span class="section-tag-dot"></span>
+          <span>Technical Competencies</span>
+        </div>
+        <h1 class="hero-title reveal delay-1" style="max-width: 850px; margin-bottom: 1.25rem;">
+          Honest expertise forged over <span class="gradient-text">8+ years of production</span> code.
+        </h1>
+        <p class="lead-text reveal delay-2" style="max-width: 750px;">
+          I believe in transparent skill representations without hyperbole. Below is my verified proficiency across CMS engineering, backend architecture, frontend interfaces, and DevOps.
+        </p>
+      </div>
+    </section>
+
+    <!-- Proficiency Standard Legend -->
+    <section class="section-sm" style="padding-top: 0;" aria-label="Competency Criteria">
+      <div class="container">
+        <div class="card" style="padding: 1.5rem 2rem; background: var(--color-surface);">
+          <div style="font-size: var(--font-size-xs); font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.75rem;">Competency Criteria:</div>
+          <div class="grid grid-3" style="gap: 1.5rem; font-size: var(--font-size-xs); color: var(--color-text-secondary);">
+            <div>
+              <strong style="color: var(--color-primary);">Expert (95%+)</strong>: Deep architectural knowledge, ability to audit core source code, author commercial frameworks, and solve edge-case concurrency issues.
+            </div>
+            <div>
+              <strong style="color: var(--color-secondary);">Advanced (88% - 94%)</strong>: Production fluency, writing secure idiomatic code, complex custom integrations, and zero reliance on tutorials.
+            </div>
+            <div>
+              <strong style="color: #F59E0B;">Proficient (80% - 87%)</strong>: Solid real-world experience, reliable implementation of enterprise standards, and ongoing active refinement.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Skills Matrix Grid (Rendered dynamically from PORTFOLIO_DATA.skills) -->
+    <section class="section" style="padding-top: 1rem;" aria-label="Skills Matrix">
+      <div class="container">
+        <div class="grid grid-2" id="skills-full-grid"></div>
+      </div>
+    </section>
+
+    <!-- Development Workflow & Tooling Section -->
+    <section class="section" style="background: var(--color-bg-alt);" aria-label="Tooling &amp; Environment">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Local &amp; Production Stack</span>
+          </div>
+          <h2 class="section-title">Development Environment &amp; Tooling</h2>
+          <p class="section-subtitle">The tools that keep development rapid, reliable, and regression-free.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card reveal" style="padding: 2rem;">
+            <h3 style="font-size: var(--font-size-lg); margin-bottom: 0.75rem;">Local Environments</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.7;">
+              LocalWP, Docker, PHP 8.2 with Xdebug, MailHog local SMTP testing, and WP-CLI for automated scripting and database scaffolding.
+            </p>
+          </div>
+
+          <div class="card reveal delay-1" style="padding: 2rem;">
+            <h3 style="font-size: var(--font-size-lg); margin-bottom: 0.75rem;">Quality &amp; Standards</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.7;">
+              PHPCS with WordPress-Coding-Standards rulesets, PHPStan level 6 static analysis, ESLint, and automated Git pre-commit hooks.
+            </p>
+          </div>
+
+          <div class="card reveal delay-2" style="padding: 2rem;">
+            <h3 style="font-size: var(--font-size-lg); margin-bottom: 0.75rem;">Deployment &amp; Cloud</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: 1.7;">
+              GitHub Actions CI/CD pipelines, staging-to-production synchronizers, Cloudflare cache purge webhooks, and Kinsta/WP Engine VIP hosting.
+            </p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Discuss a Technical Challenge &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared Footer -->
+  <footer id="site-footer"></footer>
+  <div id="customization-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/settings-manager.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
