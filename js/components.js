@@ -394,10 +394,10 @@
               <div class="settings-group">
                 <div class="settings-group-label">Card Corner Radius</div>
                 <select class="form-control" id="pref-card-radius">
-                  <option value="sharp">Sharp Architectural (8px)</option>
-                  <option value="medium" selected>Modern Balanced (18px)</option>
-                  <option value="rounded">Soft Rounded (26px)</option>
-                  <option value="pill">Pill Curves (36px)</option>
+                  <option value="sharp">Sharp Architectural (5px)</option>
+                  <option value="medium" selected>Modern Balanced 5px)</option>
+                  <option value="rounded">Soft Rounded (7px)</option>
+                  <option value="pill">Pill Curves (10px)</option>
                 </select>
               </div>
 
@@ -644,7 +644,10 @@
       // Save Preferences
       const saveBtn = document.getElementById('btn-save-preferences');
       if (saveBtn) {
-        saveBtn.addEventListener('click', () => mgr.savePreferences());
+        saveBtn.addEventListener('click', () => {
+          mgr.savePreferences();
+          mgr.closeDrawer();
+        });
       }
 
       // Reset

@@ -355,6 +355,8 @@
     const form = document.getElementById('portfolio-contact-form');
     const successAlert = document.getElementById('form-success-alert');
     const errorAlert = document.getElementById('form-error-alert');
+    const errorText = document.getElementById('form-error-text');
+    const successText = document.getElementById('form-success-text');
 
     // Pre-fill service inquiry if query param exists
     const urlParams = new URLSearchParams(window.location.search);
@@ -364,64 +366,188 @@
       if (subjectInput) {
         subjectInput.value = `Inquiry regarding: ${serviceParam}`;
       }
+      const projectTypeSelect = document.getElementById('contact-project-type');
+      if (projectTypeSelect) {
+        const lower = serviceParam.toLowerCase();
+        if (lower.includes('plugin')) projectTypeSelect.value = 'plugin';
+        else if (lower.includes('woo')) projectTypeSelect.value = 'woocommerce';
+        else if (lower.includes('elementor')) projectTypeSelect.value = 'elementor';
+        else if (lower.includes('speed') || lower.includes('vital')) projectTypeSelect.value = 'performance';
+      }
     }
 
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    if (!form) return;
 
-        // 1. Anti-spam honeypot check
-        const honeypot = document.getElementById('contact-website-trap');
-        if (honeypot && honeypot.value.trim() !== '') {
-          // Silent bot trap
-          console.warn('Spam submission suppressed by honeypot.');
-          return;
-        }
+    const nameInput = document.getElementById('contact-name');
+    const emailInput = document.getElementById('contact-email');
+    const messageInput = document.getElementById('contact-message');
+    const honeypot = document.getElementById('contact-website-trap');
+    const submitBtn = document.getElementById('contact-submit-btn');
 
-        // 2. Validate inputs
-        const name = document.getElementById('contact-name')?.value.trim();
-        const email = document.getElementById('contact-email')?.value.trim();
-        const message = document.getElementById('contact-message')?.value.trim();
+    const errName = document.getElementById('error-contact-name');
+    const errEmail = document.getElementById('error-contact-email');
+    const errMessage = document.getElementById('error-contact-message');
 
-        if (!name || !email || !message) {
-          if (errorAlert) {
-            errorAlert.textContent = 'Please fill out all required fields.';
-            errorAlert.style.display = 'flex';
-          }
-          return;
-        }
-
-        // Simple email validation regex
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          if (errorAlert) {
-            errorAlert.textContent = 'Please provide a valid email address.';
-            errorAlert.style.display = 'flex';
-          }
-          return;
-        }
-
-        // 3. Clear errors and show success state
-        if (errorAlert) errorAlert.style.display = 'none';
-
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Sending Message...';
-
-        setTimeout(() => {
-          if (successAlert) {
-            successAlert.style.display = 'flex';
-          }
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
-          form.reset();
-
-          if (window.Components?.showToast) {
-            window.Components.showToast('Message submitted! Amit will respond shortly.');
-          }
-        }, 800);
+    function clearFieldErrors() {
+      [nameInput, emailInput, messageInput].forEach(inp => {
+        if (inp) inp.classList.remove('is-invalid');
+      });
+      [errName, errEmail, errMessage].forEach(err => {
+        if (err) err.classList.remove('is-visible');
       });
     }
+
+    function setFieldError(input, errorEl, message) {
+      if (input) input.classList.add('is-invalid');
+      if (errorEl) {
+        if (message) errorEl.textContent = message;
+        errorEl.classList.add('is-visible');
+      }
+    }
+
+    // Real-time clearance of errors on user input
+    [nameInput, emailInput, messageInput].forEach(inp => {
+      if (!inp) return;
+      inp.addEventListener('input', () => {
+        if (inp.classList.contains('is-invalid')) {
+          if (inp === nameInput && inp.value.trim().length >= 2) {
+            inp.classList.remove('is-invalid');
+            if (errName) errName.classList.remove('is-visible');
+          } else if (inp === emailInput && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inp.value.trim())) {
+            inp.classList.remove('is-invalid');
+            if (errEmail) errEmail.classList.remove('is-visible');
+          } else if (inp === messageInput && inp.value.trim().length >= 10) {
+            inp.classList.remove('is-invalid');
+            if (errMessage) errMessage.classList.remove('is-visible');
+          }
+
+          // If all valid, hide the main error alert
+          const hasInvalid = [nameInput, emailInput, messageInput].some(i => i && i.classList.contains('is-invalid'));
+          if (!hasInvalid && errorAlert) {
+            errorAlert.classList.remove('is-visible');
+            errorAlert.style.display = 'none';
+          }
+        }
+      });
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // 1. Bot check
+      if (honeypot && honeypot.value.trim() !== '') {
+        console.warn('Spam submission suppressed by honeypot.');
+        return;
+      }
+
+      clearFieldErrors();
+
+      // Hide prior alerts
+      if (successAlert) {
+        successAlert.classList.remove('is-visible');
+        successAlert.style.display = 'none';
+      }
+      if (errorAlert) {
+        errorAlert.classList.remove('is-visible');
+        errorAlert.style.display = 'none';
+      }
+
+      // 2. Comprehensive Validation
+      let isValid = true;
+      let firstInvalidInput = null;
+      const errorFields = [];
+
+      const nameVal = nameInput ? nameInput.value.trim() : '';
+      const emailVal = emailInput ? emailInput.value.trim() : '';
+      const messageVal = messageInput ? messageInput.value.trim() : '';
+
+      if (!nameVal || nameVal.length < 2) {
+        isValid = false;
+        setFieldError(nameInput, errName, 'Please enter your name (at least 2 characters).');
+        if (!firstInvalidInput) firstInvalidInput = nameInput;
+        errorFields.push('Name');
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailVal) {
+        isValid = false;
+        setFieldError(emailInput, errEmail, 'Please enter your email address.');
+        if (!firstInvalidInput) firstInvalidInput = emailInput;
+        errorFields.push('Email');
+      } else if (!emailRegex.test(emailVal)) {
+        isValid = false;
+        setFieldError(emailInput, errEmail, 'Please enter a valid email address (e.g. name@example.com).');
+        if (!firstInvalidInput) firstInvalidInput = emailInput;
+        errorFields.push('Valid Email');
+      }
+
+      if (!messageVal) {
+        isValid = false;
+        setFieldError(messageInput, errMessage, 'Please tell me about your project or inquiry.');
+        if (!firstInvalidInput) firstInvalidInput = messageInput;
+        errorFields.push('Message');
+      } else if (messageVal.length < 10) {
+        isValid = false;
+        setFieldError(messageInput, errMessage, 'Please provide more details (at least 10 characters).');
+        if (!firstInvalidInput) firstInvalidInput = messageInput;
+        errorFields.push('Detailed Message');
+      }
+
+      if (!isValid) {
+        if (errorAlert) {
+          if (errorText) {
+            errorText.textContent = `Please review and correct the required fields (${errorFields.join(', ')}).`;
+          }
+          errorAlert.style.display = 'flex';
+          errorAlert.classList.add('is-visible');
+          errorAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        if (firstInvalidInput) {
+          firstInvalidInput.focus();
+        }
+        return;
+      }
+
+      // 3. Simulated Submission with Loading State
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '<span>Send Project Message</span>';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <svg style="animation: spin 1s linear infinite; width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 6px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle style="opacity: 0.25;" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path style="opacity: 0.75;" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+          </svg>
+          <span>Sending Message...</span>
+        `;
+      }
+
+      setTimeout(() => {
+        // Reset submit button
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+        }
+
+        // Show success alert
+        if (successAlert) {
+          if (successText) {
+            successText.textContent = `Thank you, ${nameVal}! Your message has been received. Amit will review your inquiry and reply within 24 hours.`;
+          }
+          successAlert.style.display = 'flex';
+          successAlert.classList.add('is-visible');
+          successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Reset form inputs
+        form.reset();
+        clearFieldErrors();
+
+        // Toast feedback
+        if (window.Components?.showToast) {
+          window.Components.showToast(`Thank you, ${nameVal}! Amit will get back to you shortly.`);
+        }
+      }, 700);
+    });
   }
 
 })();

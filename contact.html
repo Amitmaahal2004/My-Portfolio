@@ -184,16 +184,16 @@
               </p>
 
               <!-- Accessible Alerts -->
-              <div class="form-status-alert is-success" id="form-success-alert" role="alert">
+              <div class="form-status-alert is-success" id="form-success-alert" role="alert" style="display: none;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
-                <span>Thank you! Your message has been received. I will review your project and reply shortly.</span>
+                <span id="form-success-text">Thank you! Your message has been received. I will review your project and reply shortly.</span>
               </div>
 
-              <div class="form-status-alert is-error" id="form-error-alert" role="alert">
+              <div class="form-status-alert is-error" id="form-error-alert" role="alert" style="display: none;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="10"></circle>
@@ -216,12 +216,14 @@
                     <label for="contact-name" class="form-label">Your Name *</label>
                     <input type="text" id="contact-name" name="name" class="form-control"
                       placeholder="e.g. Sarah Connor" required />
+                    <div class="form-field-error" id="error-contact-name">Please enter your name.</div>
                   </div>
 
                   <div class="form-group">
                     <label for="contact-email" class="form-label">Email Address *</label>
                     <input type="email" id="contact-email" name="email" class="form-control"
                       placeholder="sarah@example.com" required />
+                    <div class="form-field-error" id="error-contact-email">Please enter a valid email address.</div>
                   </div>
                 </div>
 
@@ -249,6 +251,7 @@
                   <textarea id="contact-message" name="message" class="form-control"
                     placeholder="Tell me about your goals, current challenges, estimated timeline, and budget..."
                     required></textarea>
+                  <div class="form-field-error" id="error-contact-message">Please provide details about your project (at least 10 characters).</div>
                 </div>
 
                 <div

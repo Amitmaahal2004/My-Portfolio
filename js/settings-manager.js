@@ -47,7 +47,7 @@
     },
 
     /**
-     * Save active preferences to localStorage
+     * Save active preferences to localStorage and close drawer
      */
     savePreferences() {
       try {
@@ -55,6 +55,8 @@
         if (window.Components?.showToast) {
           window.Components.showToast('Preferences saved successfully!');
         }
+        // Automatically close the Design System Studio sidebar drawer
+        this.closeDrawer();
       } catch (e) {
         console.error('Failed to save preferences:', e);
       }
@@ -101,7 +103,7 @@
         rounded: '26px',
         pill: '36px'
       };
-      root.style.setProperty('--card-radius', radiusMap[this.prefs.cardRadius] || '18px');
+      root.style.setProperty('--card-radius', radiusMap[this.prefs.cardRadius] || '10px');
 
       // 5. Layout: Spacing
       const spacingMap = {

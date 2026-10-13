@@ -24,8 +24,8 @@ window.PORTFOLIO_CONFIG = {
     instagram: "@anku_official_92_",
     calendly: "https://calendly.com",
     resumeUrl: "assets/files/resume.html",
-    yearsExperience: 8,
-    completedProjects: 120,
+    yearsExperience: 2,
+    completedProjects: 30,
     pluginsAuthored: 14,
     clientSatisfaction: "99.8%"
   },
