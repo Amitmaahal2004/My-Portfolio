@@ -15,8 +15,19 @@
      * Initialize IntersectionObserver for scroll reveals
      */
     initScrollReveals() {
+      // Immediate viewport check
+      const revealInView = () => {
+        const triggerBottom = window.innerHeight + 80;
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= triggerBottom) {
+            el.classList.add('is-visible');
+          }
+        });
+      };
+
       // Check for reduced motion
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (prefersReduced) {
         document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
           el.classList.add('is-visible');
@@ -24,10 +35,12 @@
         return;
       }
 
+      revealInView();
+
       const options = {
         root: null,
-        rootMargin: '0px 0px -60px 0px',
-        threshold: 0.12
+        rootMargin: '0px 0px 50px 0px',
+        threshold: 0.05
       };
 
       this.observer = new IntersectionObserver((entries, observer) => {
@@ -40,6 +53,17 @@
       }, options);
 
       this.observeElements();
+
+      // Failsafe guarantee: Never leave anything invisible
+      setTimeout(() => {
+        revealInView();
+      }, 300);
+
+      setTimeout(() => {
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+          el.classList.add('is-visible');
+        });
+      }, 1000);
     },
 
     observeElements() {

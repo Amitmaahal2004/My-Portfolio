@@ -4,17 +4,42 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
+   Hero Direct Entrance (Always visible immediately on page load)
+   ----------------------------------------------------------------------- */
+.hero-content > *,
+.hero-visual {
+  animation: heroEntrance 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes heroEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content .delay-1 { animation-delay: 80ms; }
+.hero-content .delay-2 { animation-delay: 160ms; }
+.hero-content .delay-3 { animation-delay: 240ms; }
+.hero-content .delay-4 { animation-delay: 320ms; }
+
+/* --------------------------------------------------------------------------
    Scroll Reveal System (Driven by IntersectionObserver)
    ----------------------------------------------------------------------- */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-.reveal.is-visible {
+.reveal.is-visible,
+body.all-visible .reveal {
   opacity: 1;
   transform: translateY(0);
 }

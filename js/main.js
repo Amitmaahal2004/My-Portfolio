@@ -8,40 +8,51 @@
 (function () {
   'use strict';
 
-  document.addEventListener('DOMContentLoaded', () => {
+  function bootApp() {
     // 1. Initialize Managers and Shared Components
-    if (window.ThemeManager) window.ThemeManager.init();
-    if (window.ColorManager) window.ColorManager.init();
-    if (window.SettingsManager) window.SettingsManager.init();
-    if (window.Components) window.Components.init();
+    try { if (window.ThemeManager) window.ThemeManager.init(); } catch (e) { console.error(e); }
+    try { if (window.ColorManager) window.ColorManager.init(); } catch (e) { console.error(e); }
+    try { if (window.SettingsManager) window.SettingsManager.init(); } catch (e) { console.error(e); }
+    try { if (window.Components) window.Components.init(); } catch (e) { console.error(e); }
 
-    // 2. Determine Current Page
-    const pageName = window.location.pathname.split('/').pop() || 'index.html';
+    // 2. Robust Page Detection by both URL and Element Presence
+    const path = window.location.pathname.toLowerCase();
 
-    // 3. Initialize Page-Specific Logic
-    if (pageName === 'index.html' || pageName === '') {
-      initHomePage();
-    } else if (pageName === 'about.html') {
-      initAboutPage();
-    } else if (pageName === 'projects.html') {
-      initProjectsPage();
-    } else if (pageName === 'project-details.html') {
-      initProjectDetailsPage();
-    } else if (pageName === 'services.html') {
-      initServicesPage();
-    } else if (pageName === 'skills.html') {
-      initSkillsPage();
-    } else if (pageName === 'contact.html') {
-      initContactPage();
+    try {
+      if (path.includes('project-details') || document.getElementById('case-title')) {
+        initProjectDetailsPage();
+      } else if (path.includes('projects') || document.getElementById('projects-grid')) {
+        initProjectsPage();
+      } else if (path.includes('about') || document.getElementById('timeline-container')) {
+        initAboutPage();
+      } else if (path.includes('services') || document.getElementById('services-full-grid')) {
+        initServicesPage();
+      } else if (path.includes('skills') || document.getElementById('skills-full-grid')) {
+        initSkillsPage();
+      } else if (path.includes('contact') || document.getElementById('portfolio-contact-form')) {
+        initContactPage();
+      } else {
+        initHomePage();
+      }
+    } catch (err) {
+      console.error('Error during page initialization:', err);
     }
 
-    // 4. Initialize Animations (after dynamic HTML is populated)
+    // 3. Initialize Animations
     if (window.Animations) {
-      setTimeout(() => {
+      try {
         window.Animations.init();
-      }, 50);
+      } catch (e) {
+        console.error('Error initializing animations:', e);
+      }
     }
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bootApp);
+  } else {
+    bootApp();
+  }
 
   /* --------------------------------------------------------------------------
      HOME PAGE INITIALIZATION

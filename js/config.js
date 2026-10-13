@@ -5,21 +5,23 @@
  * ============================================================================
  */
 
-const PORTFOLIO_CONFIG = {
+window.PORTFOLIO_CONFIG = {
   // --------------------------------------------------------------------------
   // Profile & Personal Branding
   // --------------------------------------------------------------------------
   profile: {
-    name: "Alex Rivera",
+    name: "Amit Maahal",
     role: "Senior Web Designer & WordPress Developer",
-    tagline: "Designing modern experiences. Engineering robust WordPress solutions.",
-    shortBio: "Specializing in high-performance WordPress systems, bespoke WooCommerce architectures, custom plugin engineering, and interactive modern frontend experiences.",
-    longBio: "With over 8 years of dedicated experience at the intersection of design systems and web engineering, I build digital products that balance aesthetic beauty with rock-solid PHP architecture. From high-throughput WooCommerce engines to dynamic Elementor add-ons and bespoke Gutenberg blocks, every project is crafted for speed, scalability, and seamless user experience.",
-    location: "San Francisco, CA (Available Globally & Remote)",
-    status: "Available for Q4 Client Projects & Architecture Consulting",
+    tagline: "Designing modern experiences. Engineering robust web & WordPress solutions.",
+    shortBio: "Specializing in high-performance WordPress systems, bespoke WooCommerce architectures, custom web design, and interactive modern frontend experiences.",
+    longBio: "With dedicated experience at the intersection of design systems and web engineering, I build digital products that balance aesthetic beauty with rock-solid PHP architecture. From high-throughput WooCommerce engines to dynamic Elementor add-ons and bespoke modern websites, every project is crafted for speed, scalability, and seamless user experience.",
+    location: "Shimla, Himachal Pradesh, India (Available Globally & Remote)",
+    address: "Village Lateri, Teh. Nankhari, Dist. Shimla, P.O. Nankhari (H.P.)",
+    status: "Available for Client Projects & Web Architecture Consulting",
     statusAvailable: true,
-    email: "alex.rivera.dev@example.com",
-    phone: "+1 (415) 890-3421",
+    email: "maahalanku36@gmail.com",
+    phone: "+91 62306 02387",
+    instagram: "@anku_official_92_",
     calendly: "https://calendly.com",
     resumeUrl: "assets/files/resume.html",
     yearsExperience: 8,
@@ -124,7 +126,7 @@ const PORTFOLIO_CONFIG = {
  * ASSET REGISTRY - Centralized File Paths & Fallbacks
  * ============================================================================
  */
-const PORTFOLIO_ASSETS = {
+window.PORTFOLIO_ASSETS = {
   profile: {
     main: "assets/images/profile/profile.webp",
     fallback: "assets/images/profile/profile.jpg",
@@ -165,7 +167,7 @@ const PORTFOLIO_ASSETS = {
  * DATA - Projects, Services, Skills, Milestones
  * ============================================================================
  */
-const PORTFOLIO_DATA = {
+window.PORTFOLIO_DATA = {
   // --------------------------------------------------------------------------
   // Project Case Studies
   // --------------------------------------------------------------------------
@@ -633,6 +635,11 @@ FROM {$wpdb->prefix}artisan_locations HAVING distance < %d ORDER BY distance LIM
     }
   ]
 };
+
+// Expose global aliases
+var PORTFOLIO_CONFIG = window.PORTFOLIO_CONFIG;
+var PORTFOLIO_ASSETS = window.PORTFOLIO_ASSETS;
+var PORTFOLIO_DATA = window.PORTFOLIO_DATA;
 
 // Freeze configurations to protect integrity in browser runtime
 if (typeof Object.freeze === 'function') {

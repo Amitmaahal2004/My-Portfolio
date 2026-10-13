@@ -17,7 +17,10 @@
       if (!headerContainer) return;
 
       const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-      const config = window.PORTFOLIO_CONFIG;
+      const config = window.PORTFOLIO_CONFIG || (typeof PORTFOLIO_CONFIG !== 'undefined' ? PORTFOLIO_CONFIG : null);
+      if (!config || !config.navigation) return;
+      const assets = window.PORTFOLIO_ASSETS || (typeof PORTFOLIO_ASSETS !== 'undefined' ? PORTFOLIO_ASSETS : null);
+      const logoUrl = (assets && assets.branding) ? assets.branding.logo : 'assets/images/logo.svg';
 
       const navLinksHtml = config.navigation.map(item => {
         const isActive = currentPath === item.path || (currentPath === '' && item.path === 'index.html');
@@ -32,7 +35,7 @@
       headerContainer.innerHTML = `
         <div class="container header-inner">
           <a href="index.html" class="brand-link" aria-label="Alex Rivera Portfolio Home">
-            <img src="${window.PORTFOLIO_ASSETS.branding.logo}" alt="Alex Rivera Monogram Logo" class="logo-img" width="140" height="36" />
+            <img src="${logoUrl}" alt="Alex Rivera Monogram Logo" class="logo-img" width="140" height="36" />
           </a>
 
           <nav class="nav-links" aria-label="Main Navigation">
@@ -92,7 +95,10 @@
       if (!container) return;
 
       const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-      const config = window.PORTFOLIO_CONFIG;
+      const config = window.PORTFOLIO_CONFIG || (typeof PORTFOLIO_CONFIG !== 'undefined' ? PORTFOLIO_CONFIG : null);
+      if (!config || !config.navigation) return;
+      const assets = window.PORTFOLIO_ASSETS || (typeof PORTFOLIO_ASSETS !== 'undefined' ? PORTFOLIO_ASSETS : null);
+      const logoUrl = (assets && assets.branding) ? assets.branding.logo : 'assets/images/logo.svg';
 
       const mobileLinks = config.navigation.map(item => {
         const isActive = currentPath === item.path || (currentPath === '' && item.path === 'index.html');
@@ -111,7 +117,7 @@
         <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
           <div class="mobile-drawer-header">
             <a href="index.html" class="brand-link">
-              <img src="${window.PORTFOLIO_ASSETS.branding.logo}" alt="Alex Rivera Logo" height="32" />
+              <img src="${logoUrl}" alt="Alex Rivera Logo" height="32" />
             </a>
             <button class="icon-btn" id="mobile-close-btn" aria-label="Close Navigation Menu">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -160,10 +166,13 @@
       const footerContainer = document.getElementById('site-footer');
       if (!footerContainer) return;
 
-      const config = window.PORTFOLIO_CONFIG;
+      const config = window.PORTFOLIO_CONFIG || (typeof PORTFOLIO_CONFIG !== 'undefined' ? PORTFOLIO_CONFIG : null);
+      if (!config || !config.profile) return;
+      const assets = window.PORTFOLIO_ASSETS || (typeof PORTFOLIO_ASSETS !== 'undefined' ? PORTFOLIO_ASSETS : null);
+      const logoUrl = (assets && assets.branding) ? assets.branding.logo : 'assets/images/logo.svg';
       const currentYear = new Date().getFullYear();
 
-      const socialLinksHtml = config.social.map(s => `
+      const socialLinksHtml = (config.social || []).map(s => `
         <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="badge" title="${s.platform}">
           ${s.platform}
         </a>
@@ -175,7 +184,7 @@
           <div class="footer-top-grid">
             <div class="footer-brand-col">
               <a href="index.html" class="brand-link">
-                <img src="${window.PORTFOLIO_ASSETS.branding.logo}" alt="Alex Rivera Logo" height="34" />
+                <img src="${logoUrl}" alt="Alex Rivera Logo" height="34" />
               </a>
               <p class="section-subtitle" style="font-size: var(--font-size-sm); max-width: 380px;">
                 ${config.profile.tagline}
@@ -244,7 +253,9 @@
       const container = document.getElementById('customization-container');
       if (!container) return;
 
-      const config = window.PORTFOLIO_CONFIG;
+      const config = window.PORTFOLIO_CONFIG || (typeof PORTFOLIO_CONFIG !== 'undefined' ? PORTFOLIO_CONFIG : null);
+      if (!config || !config.colorPresets) return;
+      const assets = window.PORTFOLIO_ASSETS || (typeof PORTFOLIO_ASSETS !== 'undefined' ? PORTFOLIO_ASSETS : null);
       const presets = config.colorPresets;
 
       const swatchesHtml = presets.map(p => `
@@ -450,15 +461,15 @@
                 <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: var(--font-size-xs);">
                   <div class="card" style="padding: 0.75rem;">
                     <strong>Profile Portrait:</strong><br/>
-                    <code>${window.PORTFOLIO_ASSETS.profile.main}</code>
+                    <code>${(assets && assets.profile) ? assets.profile.main : 'assets/images/profile/profile.webp'}</code>
                   </div>
                   <div class="card" style="padding: 0.75rem;">
                     <strong>Branding Logo:</strong><br/>
-                    <code>${window.PORTFOLIO_ASSETS.branding.logo}</code>
+                    <code>${(assets && assets.branding) ? assets.branding.logo : 'assets/images/logo.svg'}</code>
                   </div>
                   <div class="card" style="padding: 0.75rem;">
                     <strong>Resume Document:</strong><br/>
-                    <code>${window.PORTFOLIO_ASSETS.files.resumeHtml}</code>
+                    <code>${(assets && assets.files) ? assets.files.resumeHtml : 'assets/files/resume.html'}</code>
                   </div>
                 </div>
               </div>
