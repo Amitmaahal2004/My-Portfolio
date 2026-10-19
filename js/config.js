@@ -158,6 +158,11 @@ window.PORTFOLIO_ASSETS = {
     metrohealth: "assets/images/projects/metrohealth.webp",
     vanguard: "assets/images/projects/vanguard.webp",
     artisanGuild: "assets/images/projects/artisan-guild.webp"
+  },
+
+  romantic: {
+    directory: "assets/images/romantic/",
+    defaultPattern: "assets/images/romantic/couple-{n}.jpg"
   }
 };
 
@@ -631,6 +636,54 @@ FROM {$wpdb->prefix}artisan_locations HAVING distance < %d ORDER BY distance LIM
       author: "David Chen",
       title: "VP of Digital, MetroHealth Clinic",
       location: "San Francisco, CA"
+    }
+  ],
+
+  // --------------------------------------------------------------------------
+  // Creative Romantic Couple Gallery Data
+  // --------------------------------------------------------------------------
+  couplePhotos: [
+    {
+      src: "assets/images/romantic/love-img-1.jpeg",
+      alt: "Our special memory together",
+      caption: "In a world full of people, my heart chose you. ❤️",
+      position: "center 20%"
+    },
+    {
+      src: "assets/images/romantic/love-img-2.jpeg",
+      alt: "Our sanctuary of peace and love",
+      caption: "You are my favorite place to go when my mind searches for peace.",
+      position: "center 20%"
+    },
+    {
+      src: "assets/images/romantic/love-img-3.jpeg",
+      alt: "A golden chapter of our love story",
+      caption: "Every love story is beautiful, but ours is my favorite.",
+      position: "center 25%"
+    },
+    {
+      src: "assets/images/romantic/love-img-4.jpeg",
+      alt: "Choosing you in every lifetime",
+      caption: "If I could choose again, I would still choose you.",
+      position: "center 20%"
+    },
+    {
+      src: "assets/images/romantic/love-img-5.jpeg",
+      alt: "Your radiant and magical smile",
+      caption: "Your smile makes even my ordinary days feel magical.",
+      position: "center 25%"
+    },
+    {
+      src: "assets/images/romantic/love-img-6.jpeg",
+      alt: "Finding home in your embrace",
+      caption: "Some moments become memories; some people become home.",
+      position: "center 25%"
+    },
+    {
+      src: "assets/images/romantic/love-img-7.jpeg",
+      alt: "Peaceful quiet moments with you",
+      caption: "With you, even silence feels beautiful.",
+      position: "center 20%"
     }
   ]
 };

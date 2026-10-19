@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&display=swap"
     rel="stylesheet">
 
   <!-- Stylesheets -->
@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/romantic-gallery.css">
 
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 
@@ -118,7 +119,127 @@
   <!-- Mobile Drawer Hook -->
   <div id="mobile-nav-container"></div>
 
+
+
+
   <main id="main-content">
+
+    <!-- ====================================================================
+         ROMANTIC COUPLE GALLERY — OUR LITTLE UNIVERSE
+         Dedicated Cinematic Couple Experience
+         ==================================================================== -->
+    <section class="romantic-couple-section" id="romantic-universe" aria-label="Our Little Universe" role="region"
+      aria-roledescription="carousel">
+      <!-- Ambient Visual Effects & Particle Canvas -->
+      <div class="romantic-bg-ambient" aria-hidden="true">
+        <canvas id="romantic-stars-canvas"></canvas>
+        <div class="romantic-glow-orb romantic-glow-orb-1"></div>
+        <div class="romantic-glow-orb romantic-glow-orb-2"></div>
+        <div class="romantic-glow-orb romantic-glow-orb-3"></div>
+        <div class="romantic-vignette"></div>
+      </div>
+
+      <!-- Top Header Area -->
+      <header class="romantic-header">
+        <div class="romantic-eyebrow">
+          <span class="romantic-eyebrow-heart" aria-hidden="true">❤️</span>
+          <span>Two Souls &bull; Infinite Memories</span>
+        </div>
+        <h2 class="romantic-title">Our Little Universe</h2>
+        <p class="romantic-subtitle">Two hearts, countless memories, one beautiful story.</p>
+      </header>
+
+      <!-- Center Stage Area -->
+      <div class="romantic-stage">
+        <!-- Floating Navigation: Previous -->
+        <button class="romantic-nav-btn romantic-nav-prev" id="romantic-prev-btn" aria-label="Previous photograph"
+          title="Previous Photograph">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Showcase Card Container -->
+        <div class="romantic-card-container">
+          <div class="romantic-card" tabindex="0" role="group" aria-label="Featured couple photograph showcase">
+            <!-- Progress Bar Tracker -->
+            <div class="romantic-progress-track" aria-hidden="true">
+              <div class="romantic-progress-bar"></div>
+            </div>
+
+            <!-- Counter Badge -->
+            <div class="romantic-card-counter" aria-label="Photograph counter">
+              <span class="romantic-card-counter-dot" aria-hidden="true"></span>
+              <span id="romantic-counter-current">01</span>
+              <span>/</span>
+              <span id="romantic-counter-total">07</span>
+            </div>
+
+            <!-- Media Container -->
+            <div class="romantic-media-wrapper">
+              <!-- Romantic Fallback State (renders if custom image is missing) -->
+              <div class="romantic-fallback-display" style="display: none;" aria-live="polite">
+                <div class="romantic-fallback-emblem">
+                  <svg class="romantic-fallback-heart" viewBox="0 0 24 24">
+                    <path
+                      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                  </svg>
+                </div>
+                <div class="romantic-fallback-title">Memory #1 &bull; Sacred Moment</div>
+                <p class="romantic-fallback-hint">Personalize this memory by dropping your couple photograph at:</p>
+                <code class="romantic-fallback-path">assets/images/romantic/couple-1.jpg</code>
+              </div>
+            </div>
+
+            <!-- Cinematic Gradient Vignette -->
+            <div class="romantic-card-gradient" aria-hidden="true"></div>
+            <div class="romantic-card-border-glow" aria-hidden="true"></div>
+
+            <!-- Romantic Caption Over the Bottom of the Image -->
+            <div class="romantic-caption-container" aria-live="polite">
+              <blockquote class="romantic-caption-quote is-active" id="romantic-active-caption">
+                "In a world full of people, my heart chose you. ❤️"
+              </blockquote>
+              <div class="romantic-caption-accent">
+                <span class="romantic-caption-heart" aria-hidden="true">❤️</span>
+                <span>Forever &amp; Always</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Navigation: Next -->
+        <button class="romantic-nav-btn romantic-nav-next" id="romantic-next-btn" aria-label="Next photograph"
+          title="Next Photograph">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Bottom Controls & Footer Tagline -->
+      <footer class="romantic-footer">
+        <div class="romantic-controls-bar">
+          <button class="romantic-play-pause-btn" id="romantic-play-pause-btn" aria-label="Pause slideshow"
+            title="Pause Slideshow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+              <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+            </svg>
+          </button>
+
+          <!-- Interactive Pagination Indicator Dots -->
+          <div class="romantic-pagination" role="tablist" aria-label="Choose photograph to view"></div>
+        </div>
+
+        <!-- Subtle Emotional Footer -->
+        <div class="romantic-footer-tagline">
+          <span>Made with love, just for you</span>
+          <span class="romantic-footer-heart" aria-hidden="true">❤️</span>
+        </div>
+      </footer>
+    </section>
+
 
     <!-- ====================================================================
          HERO SECTION
@@ -680,6 +801,8 @@ final class MetricsEngine {
       </div>
     </section>
 
+
+
     <!-- ====================================================================
          CALL TO ACTION BANNER
          ==================================================================== -->
@@ -796,6 +919,7 @@ final class MetricsEngine {
   <script src="js/components.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/romantic-gallery.js"></script>
 </body>
 
 </html>
